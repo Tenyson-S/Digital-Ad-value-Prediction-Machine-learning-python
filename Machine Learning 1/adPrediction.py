@@ -20,3 +20,13 @@ model.fit(x_train,y_train)
 
 y_pred=model.predict(x_test)
 print(f"Accuracy of the model :{accuracy_score(y_test,y_pred)*100}%")
+
+age=int(input("Enter the customer age "))
+sal=int(input("Enter the customer salary "))
+newCust=[[age,sal]]
+result=model.predict(sc.transform(newCust))
+print(result)
+if result==1:
+    print("Customer will buy ")
+else:
+    print("Customer will not buy")
